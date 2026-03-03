@@ -1,0 +1,259 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+*{
+    background-color: #f0eee9;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+header{
+    color: #0d81c0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    padding-bottom: 90px;
+    padding-right: 50px;
+    padding-top: 30px;
+}
+
+
+#logo{
+    width: 300px;
+    object-fit: cover;
+}
+
+.sider{
+    display: flex;
+    gap: 20px;
+    font-family: sans-serif;
+    font-size: 25px;
+}
+
+#about,
+#Products,
+#Review{
+    color: #0d81c0;
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid #f0eee9;
+    border-radius: 15px;
+}
+
+#about:hover,
+#Products:hover,
+#Review:hover{
+    background-color: #0d81c0;
+    color:#f0eee9;
+}
+#hero{
+    width: 700px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.hero-content{
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
+    gap: 20px;                       
+    align-items: center;
+}
+
+.hero-image{
+    grid-column: 2;
+    grid-row: span 2;
+    padding-right: 50px;
+    object-fit: fit;
+}
+
+.hero-c{
+    padding: 60px;
+}
+
+#hero-heading{
+    font-family: sans-serif;
+    color: #0d81c0;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#hero-heading h1{
+    font-size: 30px;
+}
+
+#sub-heading{
+    font-family: sans-serif;
+    color: #2B193D;
+    font-size: 25px;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#About{
+    display: block;
+    text-align: center;
+}
+
+#a-title{
+    color: #0d81c0;
+    font-family: sans-serif;
+    font-size: 45px;
+}
+
+#a-content p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#a-content{
+    font-family: 'inter',sans-serif;
+    font-size: 25px;
+}
+
+.values{
+    display: grid;
+    grid-template-columns: minmax(200px,1fr) minmax(200px,1fr) minmax(200px,1fr);
+    padding: 60px;
+    gap: 20px;
+    padding-top: 0px;
+}
+
+.values > *{
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+
+.value-head{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'inter',sans-serif;
+    color: #0d81c0;
+    background-color: transparent;
+}
+
+.value-content{
+    font-size: 20px;
+    font-family: sans-serif;
+    background-color: transparent;
+}
+
+.values > *:hover{
+    background-color: #0d81c0;
+}
+
+.values > *:hover .value-head{
+    color: #f0eee9;
+}
+
+#prod{
+    display: grid;
+    grid-template-columns: minmax(200px,1fr) minmax(200px,1fr);
+    justify-content: center;
+    text-align: center;
+    align-items: start;
+    gap: 50px;
+    margin: 50px;
+}
+
+#prod > *{
+    border: 2px solid #f0eee9;
+    border-radius: 15px;
+    background-color: #0d81c0;
+    padding: 30px;
+    height: 450px;
+}
+
+#prod p{
+    background-color: transparent;
+    color: #f0eee9;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.prod1{
+    align-items: center;
+}
+
+#prod img{
+    width: 200px;
+    border-radius: 15px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.foot{
+    display: flex;
+   justify-content: space-evenly;
+    padding: 20px;
+}
+.l img{
+    width: 250px;
+}
+
+.container{
+    display: flex;
+    animation: scroll-left 50s linear infinite;
+    padding: 30px;
+    gap: 30px;
+    width: max-content;
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+.container:hover {
+    animation-play-state: paused;
+}
+
+.container > *{
+    border: 2px solid #7e7d79;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.price-cards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h2{
+    font-size: 30px;
+}
+
+button:hover{
+    background-color: red;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .price-cards{
+        flex-direction: column;
+    }
+
+    .values{
+        grid-template-columns: 1fr;
+    }
+    #prod{
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content{
+        flex-direction: column;
+    }
+
+    .sider{
+        flex-direction: column;
+    }
+    #hero{
+        width: 400px;
+        justify-content: center;
+        align-items: center;
+    }
+}
