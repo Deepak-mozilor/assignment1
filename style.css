@@ -216,33 +216,51 @@ main h1{
     width: 250px;
 }
 
-#review{
+.carousal {
+    position: relative;
     overflow: hidden;
-}
-
-.container{
-    display: flex;
-    animation: scroll-left 50s linear infinite;
-    padding: 30px;
-    gap: 30px;
-    width: max-content;
-}
-
-@keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } 
-}
-
-.container:hover {
-    animation-play-state: paused;
-}
-
-.container > *{
-    border: 2px solid #7e7d79;
-    border-radius: 15px;
     padding: 20px;
 }
 
+input{
+    display: none;
+}
+.slides {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+    padding: 20px;
+}
+
+.slide {
+    width: 33.333%;
+    justify-content: center;
+    text-align: center;
+}
+
+#slide1:checked ~ .slides { transform: translateX(0%); }
+#slide2:checked ~ .slides { transform: translateX(-33.333%); }
+#slide3:checked ~ .slides { transform: translateX(-66.666%); }
+
+.nav1, .nav2, .nav3 {
+    display: none;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    pointer-events: none;
+}
+
+.nav1 label, .nav2 label, .nav3 label {
+    background: transparent !important;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+#slide1:checked ~ .nav1 { display: flex; }
+#slide2:checked ~ .nav2 { display: flex; }
+#slide3:checked ~ .nav3 { display: flex; }
 .price-cards{
     display: flex;
     justify-content: space-evenly;
